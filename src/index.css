@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Futuristic background - Deep dark blue */
+    --background: 222 84% 5%;
+    --foreground: 189 100% 90%;
+
+    /* Cards with neon glow */
+    --card: 222 84% 8%;
+    --card-foreground: 189 100% 90%;
+
+    /* Popovers */
+    --popover: 222 84% 8%;
+    --popover-foreground: 189 100% 90%;
+
+    /* Primary - Electric cyan */
+    --primary: 189 100% 50%;
+    --primary-foreground: 222 84% 5%;
+
+    /* Secondary - Electric purple */
+    --secondary: 270 95% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 215 32% 15%;
+    --muted-foreground: 217 19% 70%;
+
+    /* Accent - Neon green */
+    --accent: 120 100% 50%;
+    --accent-foreground: 222 84% 5%;
+
+    /* Destructive - Hot pink */
+    --destructive: 330 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 189 100% 50% / 0.3;
+    --input: 215 32% 20%;
+    --ring: 189 100% 50%;
+
+    /* Financial colors - Vibrant neon */
+    --income: 120 100% 50%;
+    --income-foreground: 222 84% 5%;
+    --expense: 0 100% 65%;
+    --expense-foreground: 0 0% 100%;
+    --profit: 120 100% 50%;
+    --loss: 0 100% 65%;
+
+    /* Futuristic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(189 100% 50%), hsl(270 95% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(222 84% 8%), hsl(215 32% 15%));
+    --gradient-income: linear-gradient(135deg, hsl(120 100% 50%), hsl(142 100% 40%));
+    --gradient-expense: linear-gradient(135deg, hsl(0 100% 65%), hsl(330 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(189 100% 50%), hsl(270 95% 60%), hsl(120 100% 50%));
+    --gradient-accent: linear-gradient(90deg, hsl(270 95% 60%), hsl(189 100% 50%));
+
+    /* Glowing shadows */
+    --shadow-card: 0 8px 32px hsl(189 100% 50% / 0.2);
+    --shadow-income: 0 8px 32px hsl(120 100% 50% / 0.3);
+    --shadow-expense: 0 8px 32px hsl(0 100% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(189 100% 50% / 0.5);
+    --shadow-accent: 0 0 30px hsl(270 95% 60% / 0.4);
+
+    /* Neon chart colors */
+    --chart-1: 189 100% 50%;
+    --chart-2: 270 95% 60%;
+    --chart-3: 120 100% 50%;
+    --chart-4: 330 100% 60%;
+    --chart-5: 60 100% 50%;
+    
+    /* Category colors */
+    --category-alimentacao: 15 80% 55%;
+    --category-transporte: 200 90% 50%;
+    --category-moradia: 280 65% 60%;
+    --category-saude: 120 70% 50%;
+    --category-educacao: 45 90% 55%;
+    --category-lazer: 300 75% 55%;
+    --category-compras: 190 80% 50%;
+    --category-contas: 25 85% 55%;
+    --category-outros: 210 40% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide Lovable watermark/badge */
+a[href*="lovable.dev"], 
+iframe[src*="lovable.dev"],
+div[style*="Edit with Lovable"],
+.lovable-badge {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
